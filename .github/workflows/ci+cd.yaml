@@ -1,0 +1,28 @@
+name: App CI/CD
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install project
+        run: uv sync --all-extras --dev
+
+      - name: Run tests
+        # We assume pytest is installed via dev dependencies
+        run: uv run pytest
