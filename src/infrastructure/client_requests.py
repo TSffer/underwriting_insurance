@@ -92,6 +92,217 @@ def consult_insurance_policy():
     print_assitant_response(simulated_response)
 
 
+def report_emergency():
+    print("\n☎️  Reportando emergencia...\n")
+    
+    # Placeholder details
+    url = "https://api.insurance-provider.com/v1/emergencies/report"
+    
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN", 
+        "Accept": "application/json"
+    }
+    
+    payload = {
+        "client_identification": "12345678",
+        "emergency_type": "Car Accident",
+        "location": "Current GPS Location"
+    }
+
+    print(f"Request URL: {url}")
+    print(f"Method: POST")
+    print(f"Headers: {json.dumps(headers, indent=2)}")
+    print(f"Payload: {json.dumps(payload, indent=2)}")
+    
+    # response = make_request(url, headers, payload)
+    
+    simulated_response = {
+        "status": "success",
+        "data": {
+            "case_number": "EMG-2023-001",
+            "message": "Emergencia reportada. Una unidad va en camino.",
+            "estimated_arrival": "15 minutos"
+        }
+    }
+    print_assitant_response(simulated_response)
+
+
+def consult_payments():
+    print("\n💲 Consultando pagos...\n")
+    
+    url = "https://api.insurance-provider.com/v1/payments/status"
+    
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+        "Accept": "application/json"
+    }
+    
+    payload = {
+        "client_identification": "12345678"
+    }
+
+    print(f"Request URL: {url}")
+    print(f"Method: GET") 
+    print(f"Headers: {json.dumps(headers, indent=2)}")
+    print(f"Payload: {json.dumps(payload, indent=2)}")
+
+    # response = make_request(url, headers, payload)
+
+    simulated_response = {
+        "status": "success",
+        "data": {
+            "outstanding_balance": 0.00,
+            "last_payment_date": "2023-10-15",
+            "next_payment_due": "2023-11-15",
+            "amount_due": 150.00
+        }
+    }
+    print_assitant_response(simulated_response)
+
+
+def schedule_inspection():
+    print("\n🔍 Coordinando inspección vehicular...\n")
+    
+    url = "https://api.insurance-provider.com/v1/inspections/schedule"
+    
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+        "Accept": "application/json"
+    }
+    
+    payload = {
+        "client_identification": "12345678",
+        "preferred_date": "2023-11-01",
+        "plate_number": "ABC-123"
+    }
+
+    print(f"Request URL: {url}")
+    print(f"Method: POST")
+    print(f"Headers: {json.dumps(headers, indent=2)}")
+    print(f"Payload: {json.dumps(payload, indent=2)}")
+    
+    # response = make_request(url, headers, payload)
+    
+    simulated_response = {
+        "status": "success",
+        "data": {
+            "inspection_id": "INS-9988",
+            "confirmed_date": "2023-11-01T10:00:00",
+            "center": "Centro de Inspección Norte"
+        }
+    }
+    print_assitant_response(simulated_response)
+
+
+def manage_claims():
+    print("\n📝 Gestionando reclamos...\n")
+    
+    url = "https://api.insurance-provider.com/v1/claims/list"
+    
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+        "Accept": "application/json"
+    }
+    
+    payload = {
+        "client_identification": "12345678",
+        "status_filter": "open"
+    }
+
+    print(f"Request URL: {url}")
+    print(f"Method: POST")
+    print(f"Headers: {json.dumps(headers, indent=2)}")
+    print(f"Payload: {json.dumps(payload, indent=2)}")
+    
+    # response = make_request(url, headers, payload)
+    
+    simulated_response = {
+        "status": "success",
+        "data": {
+            "claims": [
+                {
+                    "claim_id": "CLM-456",
+                    "status": "In Review",
+                    "description": "Minor bumper damage"
+                }
+            ]
+        }
+    }
+    print_assitant_response(simulated_response)
+
+
+def quote_new_insurance():
+    print("\n🛒 Cotizando nuevo seguro...\n")
+    
+    url = "https://api.insurance-provider.com/v1/quotes/new"
+    
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+        "Accept": "application/json"
+    }
+    
+    payload = {
+        "client_identification": "12345678",
+        "insurance_type": "Home",
+        "coverage_amount": 200000
+    }
+
+    print(f"Request URL: {url}")
+    print(f"Method: POST")
+    print(f"Headers: {json.dumps(headers, indent=2)}")
+    print(f"Payload: {json.dumps(payload, indent=2)}")
+    
+    # response = make_request(url, headers, payload)
+    
+    simulated_response = {
+        "status": "success",
+        "data": {
+            "quote_id": "QT-777",
+            "monthly_premium": 25.50,
+            "coverage_details": "Fire, Theft, Natural Disasters"
+        }
+    }
+    print_assitant_response(simulated_response)
+
+
+def consult_bank_channel():
+    print("\n🤔 Consultando canales del banco...\n")
+    
+    url = "https://api.insurance-provider.com/v1/bank/channels"
+    
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+        "Accept": "application/json"
+    }
+    
+    payload = {
+        "query": "customer service hours"
+    }
+
+    print(f"Request URL: {url}")
+    print(f"Method: GET")
+    print(f"Headers: {json.dumps(headers, indent=2)}")
+    print(f"Payload: {json.dumps(payload, indent=2)}")
+    
+    # response = make_request(url, headers, payload)
+    
+    simulated_response = {
+        "status": "success",
+        "data": {
+            "phone": "555-0199",
+            "website": "www.bank.com",
+            "hours": "Mon-Fri 9am-5pm"
+        }
+    }
+    print_assitant_response(simulated_response)
+
+
 def main():
     while True:
         show_menu()
@@ -100,17 +311,17 @@ def main():
         if choice == '1':
             consult_insurance_policy()
         elif choice == '2':
-            print("\n☎️  Opción Reportar emergencia seleccionada (No implementada)\n")
+            report_emergency()
         elif choice == '3':
-            print("\n💲 Opción Pagos seleccionada (No implementada)\n")
+            consult_payments()
         elif choice == '4':
-            print("\n🔍 Opción Inspección de mi auto seleccionada (No implementada)\n")
+            schedule_inspection()
         elif choice == '5':
-            print("\n📝 Opción Gestiones y Reclamos seleccionada (No implementada)\n")
+            manage_claims()
         elif choice == '6':
-            print("\n🛒 Opción Cotizar un seguro seleccionada (No implementada)\n")
+            quote_new_insurance()
         elif choice == '7':
-            print("\n🤔 Opción Consultas Banco seleccionada (No implementada)\n")
+            consult_bank_channel()
         elif choice.lower() == 'q':
             print("\n👋 Saliendo de la aplicación. ¡Hasta luego!\n")
             break

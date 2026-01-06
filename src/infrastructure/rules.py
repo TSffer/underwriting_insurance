@@ -19,5 +19,7 @@ def crear_dataset_rules(n_pos_clas=1000,seed=42):
     random.seed(seed)
     np.random.seed(seed)
 
- 
+    print(f"Creating rules dataset with {n_pos_clas} samples and seed {seed}")
     
+    # Placeholder: Return an empty DataFrame for now
+    return pd.DataFrame()
