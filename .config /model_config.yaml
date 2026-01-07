@@ -1,0 +1,51 @@
+llm_providers:
+  openai:
+    enabled: true
+    api_key_env: "OPENAI_API_KEY"
+    base_url: "https://api.openai.com/v1"
+    default_model: "gpt-4o"
+    models:
+      gpt-4o:
+        context_window: 128000
+        cost_input: 5.00
+        cost_output: 15.00
+      gpt-4-turbo:
+        context_window: 128000
+        cost_input: 10.00
+        cost_output: 30.00
+      gpt-3.5-turbo:
+        context_window: 16385
+        cost_input: 0.50
+        cost_output: 1.50
+
+  anthropic:
+    enabled: false
+    api_key_env: "ANTHROPIC_API_KEY"
+    base_url: "https://api.anthropic.com"
+    default_model: "claude-3-opus-20240229"
+    models:
+      claude-3-opus-20240229:
+        context_window: 200000
+        cost_input: 15.00
+        cost_output: 75.00
+      claude-3-sonnet-20240229:
+        context_window: 200000
+        cost_input: 3.00
+        cost_output: 15.00
+
+  google:
+    enabled: false
+    api_key_env: "GOOGLE_API_KEY"
+    default_model: "gemini-1.5-pro"
+    models:
+      gemini-1.5-pro:
+        context_window: 1000000
+        cost_input: 3.50
+        cost_output: 10.50
+
+global_parameters:
+  temperature: 0.7
+  max_tokens: 2048
+  top_p: 1.0
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
