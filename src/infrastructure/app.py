@@ -11,13 +11,22 @@ from advanced_broker_vehicular import preparar_rag, clasificar_intencion, maneja
 # Page configuration
 st.set_page_config(page_title="Copiloto de Seguros", page_icon="🚗", layout="centered")
 
+# Helper function to cache the RAG chain
+@st.cache_resource(show_spinner="Inicializando sistema de seguros...")
+def get_cached_rag_chain():
+    return preparar_rag()
+
 # Initialize session state for chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-if "rag_chain" not in st.session_state:
-    with st.spinner("Inicializando sistema de seguros..."):
-        st.session_state.rag_chain = preparar_rag()
+# Load the RAG chain (cached)
+try:
+    st.session_state.rag_chain = get_cached_rag_chain()
+except Exception as e:
+    st.error(f"Error al cargar el sistema de seguros: {e}")
+    st.session_state.rag_chain = None
+
 
 # Sidebar
 st.sidebar.title("🚗 Copiloto de Seguros")
