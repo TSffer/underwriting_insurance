@@ -13,9 +13,12 @@ from langchain_core.output_parsers import StrOutputParser
 
 # --- 1. CONFIGURACIÓN ---
 load_dotenv()
-if not os.getenv("OPENAI_API_KEY"):
-    print("❌ Error: Configura tu OPENAI_API_KEY en el archivo .env")
-    sys.exit(1)
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    # Warning instead of exit to allow imports in CI/CD or tests
+    print("⚠️  Advertencia: OPENAI_API_KEY no encontrada. Algunas funciones fallarán.")
+
 
 
 # --- 2. PREPARACIÓN DE LA BASE DE CONOCIMIENTO (RAG) ---
