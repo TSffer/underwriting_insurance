@@ -15,7 +15,11 @@ from langchain_core.output_parsers import StrOutputParser
 load_dotenv()
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
+if api_key:
+    # Remove surrounding quotes and whitespace (fixes common Docker --env-file issues)
+    api_key = api_key.strip().strip("'").strip('"')
+    os.environ["OPENAI_API_KEY"] = api_key
+else:
     # Warning instead of exit to allow imports in CI/CD or tests
     print("⚠️  Advertencia: OPENAI_API_KEY no encontrada. Algunas funciones fallarán.")
 
