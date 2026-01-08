@@ -23,15 +23,15 @@ def crear_dataset_rules(n_pos_clas=1000, seed=42):
 
     # Define intents and their templates
     intents = {
-        "consultar_poliza": [
+    "consultar_poliza": [
             "quiero ver mi poliza", "consultar informacion de poliza", "estado de mi seguro",
             "que cubre mi poliza", "detalles de la poliza de auto", "mostrar mis seguros activos",
-            "tengo seguro de vida?", "vigencia de la poliza", "numero de poliza", "cobertura del seguro"
+            "tengo seguro de vida?", "vigencia de la poliza", "numero de poliza", "cobertura del seguro","saldre del pais"
         ],
         "reportar_emergencia": [
             "ayuda emergencia", "reportar choque", "tuve un accidente", "necesito una ambulancia",
             "numero de emergencia", "siniestro de auto", "robo de vehiculo", "asistencia vial urgente",
-            "grua por favor", "me chocaron"
+            "grua por favor", "me chocaron","me robaron mi auto",
         ],
         "pagos": [
             "donde pago mi seguro", "cuanto debo", "fecha de pago", "pagar en linea",
@@ -42,6 +42,21 @@ def crear_dataset_rules(n_pos_clas=1000, seed=42):
             "quiero un nuevo seguro", "precio de seguro de auto", "cotizar seguro de vida",
             "contratar poliza nueva", "cuanto cuesta un seguro", "ofertas de seguros",
             "asegurar mi casa", "cotizacion rapida", "planes disponibles", "comprar seguro"
+        ],
+        "inspeccion_vehicular": [
+            "agendar inspeccion", "coordinar revision de auto", "cita para inspeccion",
+            "revision vehicular", "donde llevo mi auto a revisar", "inspeccion de siniestro",
+            "programar cita de revision", "verificar daños de auto", "cuando puedo llevar mi carro"
+        ],
+        "gestion_reclamos": [
+            "estado de mi reclamo", "como va mi solicitud", "seguimiento de siniestro",
+            "consultar reclamo", "estatus de queja", "reclamo abierto", "resultado de reclamo",
+            "gestion de siniestros", "revisar caso"
+        ],
+        "consultar_banco": [
+            "horario de atencion del banco", "telefono del banco", "contactar al banco",
+            "pagina web del banco", "donde queda el banco", "canales de atencion bancaria",
+            "llamar al banco", "servicio al cliente banco"
         ]
     }
 
