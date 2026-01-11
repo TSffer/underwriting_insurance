@@ -1,12 +1,54 @@
-# Python-generated files
+# Archivos de Python
 __pycache__/
-*.py[oc]
+*.py[cod]
+*.pyo
+*.pyd
+
+# Archivos de entorno virtual
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Configuración de IDEs
+.vscode/
+.idea/
+*.swp
+
+# Archivos de pruebas y cobertura
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Archivos de logs
+*.log
+
+# Archivos de compilación
 build/
 dist/
-wheels/
-*.egg-info
+*.egg-info/
+.eggs/
 
-# Virtual environments
-.venv
-.env
+# Archivos de Jupyter
+.ipynb_checkpoints
 
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración de pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Configuración de mypy
+.mypy_cache/
+
+# Configuración de Pyre
+.pyre/
+
+# Configuración de Pylint
+pylint.log
